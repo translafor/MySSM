@@ -58,6 +58,12 @@ public class Order {
 	}
 	
 	
+	public Order(String custName, String prodName, int statu) {
+		super();
+		this.custName = custName;
+		this.prodName = prodName;
+		this.statu = statu;
+	}
 	public Order(String custName, String prodName, double orderCount, Date orderDate, int statu) {
 		super();
 		this.custName = custName;

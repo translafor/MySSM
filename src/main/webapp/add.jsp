@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>添加页面</title>
+<title>管理员界面</title>
 <link rel="stylesheet" type="text/css" href="${domain }css/myfirst.css">
 <script type="text/javascript">
 
@@ -38,6 +38,11 @@ with (thisform)
 	   		style="fill:blue;stroke:red;stroke-width:3;fill-rule:evenodd;" />
 	</svg>
 	<br/>
+	<header>
+		<h1>欢迎来到管理员界面！请确保你已经登录！</h1>
+	</header>
+	<br/>
+	添加数据：<br/>
 	<form action="addOrder.action" onsubmit="return validate_form(this)" method="post">  
     	
         <p5>custName:</p5>&emsp;<input type="text" name="custName"/><br/>  
@@ -45,7 +50,16 @@ with (thisform)
         <p5>orderCount:</p5>&nbsp;<input type="text" name="orderCount"/><br/>
         <p5>orderDate:</p5>&nbsp;&nbsp;&nbsp;<input type="date" name="orderDate"/><br/> 
         <p5>statu:</p5>&emsp;&emsp;&emsp;&emsp;<input type="text" name="statu"/><br/>
-        <input type="submit" value=添加/><br/>  
+         &emsp;&emsp;&emsp;<input type="submit" value=添加><br/>  
+    </form>
+    <br/>
+    删除数据：<br/>
+    <form action="deleteOrder.action" onsubmit="return validate_form(this)" method="post">  
+    	
+        <p5>custName:</p5>&emsp;<input type="text" name="custName"/><br/>   
+        <p5>prodName:</p5>&nbsp;&nbsp;<input type="text" name="prodName"/><br/>   
+        <p5>statu:</p5>&emsp;&emsp;&emsp;&emsp;<input type="text" name="statu"/><br/>
+         &emsp;&emsp;&emsp;<input type="submit" value=删除><br/>  
     </form>
     <br/>
 	<div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:blue;width:120px;height:20px;padding:40px;color:#ffffff;">轻触查看时间</div>

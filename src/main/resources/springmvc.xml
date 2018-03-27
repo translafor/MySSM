@@ -20,7 +20,8 @@
       <!-- 配置登陆拦截器 -->  
       <mvc:interceptor>  
           <mvc:mapping path="/add.jsp"/>
-          <mvc:mapping path="/addOrder.action"/>  
+          <mvc:mapping path="/addOrder.action"/>
+          <mvc:mapping path="/deleteOrder.action"/>  
           <bean class="com.fendo.interceptor.HandlerInterceptor1"></bean>  
       </mvc:interceptor>  
  

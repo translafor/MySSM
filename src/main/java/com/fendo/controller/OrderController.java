@@ -123,5 +123,27 @@ public class OrderController {
     	modelAndView=orderService.addOrdersService(order);
     	return modelAndView;
     }
+    
+    /**
+     * 删除用户信息逻辑
+     */
+    @RequestMapping("/deleteOrder")
+    public ModelAndView deleteOrders(HttpSession session,HttpServletRequest request){
+    	Order order=new Order();
+    	ModelAndView modelAndView=new ModelAndView();
+    	
+    	String adminName=request.getParameter("adminName");
+    	String custName=request.getParameter("custName");
+    	String prodName=request.getParameter("prodName");
+    	String statu01=request.getParameter("statu");
+    	int statu=Integer.parseInt(statu01);
+    	order.setCustName(custName);
+    	order.setProdName(prodName);
+    	order.setStatu(statu);
+    	session.setAttribute("adminName", adminName);
+    	modelAndView=orderService.deleteOrdersService(order);
+    	return modelAndView;
+    }
+    
 
 }

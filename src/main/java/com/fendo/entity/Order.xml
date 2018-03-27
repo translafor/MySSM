@@ -23,7 +23,12 @@
     <!-- 插入一条数据 -->  
     <insert id="addOrder" parameterType="order">  
         insert into orders(custName,prodName,orderCount,orderDate,statu) values(#{custName},#{prodName},#{orderCount},#{orderDate},#{statu})  
-    </insert> 
+    </insert>
+    
+    <!-- 插入一条数据 -->  
+    <delete id="deleteOrder" parameterType="order">  
+        delete from orders where custName=#{custName} and prodName=#{prodName} and statu=#{statu}
+    </delete> 
       
       
 </mapper> 

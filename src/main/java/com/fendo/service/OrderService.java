@@ -108,4 +108,22 @@ public class OrderService {
         return modelAndView;
 	}
 
+	public ModelAndView deleteOrdersService(Order order) {
+		
+		ModelAndView modelAndView=new ModelAndView();
+		//加入数据  
+        orderDao.deleteOrder(order);  
+          
+        //查数据  
+        List<Order> orders=orderDao.getOrders();  
+          
+        //存起来  
+         
+        modelAndView.setViewName("success");  
+        modelAndView.addObject("orders", orders);  
+          
+        
+    	return modelAndView;
+	}
+
 }

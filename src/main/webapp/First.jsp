@@ -60,20 +60,22 @@
 	快速登录小窗口：
 	<br/>
 	<iframe src="index.jsp" width="200" height="200"></iframe><br/>
-	<p2>登录链接：</p2><br/><br/><br/>
+	登录链接：&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	<a href="index.jsp" >
 	<p1>管理员登录</p1>
 	</a>
 	<br/>
 	
 	<hr/>
+	普通客户查询数据界面：
 	<a href="search.jsp" target="_blank">
-	<p3>查询数据</p3>
+	<p3>查询</p3>
 	</a>
 	<br/>
 	<hr/>
+	管理员界面：&emsp;&emsp;&emsp;&emsp;&emsp;
 	<a href="add.jsp" target="_blank">
-	<p4>添加数据</p4>
+	<p4>管理员</p4>
 	</a>
 	<hr/>
 	<br/>

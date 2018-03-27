@@ -15,5 +15,7 @@ public interface OrderDao {
 
 	public List<Order> getOrdersBystatu(Order order);
 
+	public void deleteOrder(Order order);
+
 	
 }
