@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+    
+<mapper namespace="com.fendo.dao.AdminDao">  
+  
+    <!-- 查询所有的数据 -->  
+    <select id="getAdmins" resultType="Admin" parameterType="admin">  
+        select * from orders_admin where adminName=#{adminName} and adminPwd=#{adminPwd}  
+    </select>  
+    
+    <!-- 插入一条数据 -->  
+    <insert id="addAdmin" parameterType="admin">  
+        insert into orders_admin (adminName,adminPwd) values(#{adminName},#{adminPwd})  
+    </insert> 
+      
+      
+</mapper> 
