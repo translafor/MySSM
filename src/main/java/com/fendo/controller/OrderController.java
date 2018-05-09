@@ -11,7 +11,9 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fendo.entity.Order;
@@ -30,11 +32,11 @@ public class OrderController {
 	 * 获取全部客户信息逻辑
 	 */
     @RequestMapping("/getOrders")  
-    public ModelAndView getOrders(HttpServletRequest request,HttpSession session){  
+    public ModelAndView getOrders(@RequestParam(value = "adminName", required = true) String adminName,
+    		  @RequestParam(value = "adminPwd", required = true) String adminPwd,HttpSession session){  
+    	/*用@RequestParam注解代替httpservlet的get..方法*/
     	ModelAndView modelAndView=new ModelAndView(); 
     	
-    	String adminName=request.getParameter("adminName");
-    	String adminPwd=request.getParameter("adminPwd");
     	session.setAttribute("adminName", adminName);
     	modelAndView=orderService.getOrdersService(adminName,adminPwd);
     	  
@@ -47,10 +49,10 @@ public class OrderController {
 	 *  通过名字获取客户信息逻辑
 	 */
     @RequestMapping("/getOrdersBycustName")  
-    public ModelAndView getOrdersBycustName(HttpServletRequest request){  
+    public ModelAndView getOrdersBycustName(@RequestParam(value = "custName", required = false) String custName){  
     	ModelAndView modelAndView=new ModelAndView(); 
     	
-    	String custName=request.getParameter("custName");
+    	
     	
     	modelAndView=orderService.getOrdersBycustNameService(custName);
     	  
@@ -63,10 +65,9 @@ public class OrderController {
 	 * 通过statu(订单状态)获取客户信息逻辑
 	 */
     @RequestMapping("/getOrdersBystatu")  
-    public ModelAndView getOrdersBystatu(HttpServletRequest request,HttpSession session){  
+    public ModelAndView getOrdersBystatu(@RequestParam(value = "statu", required = true) String s,HttpSession session){  
     	ModelAndView modelAndView=new ModelAndView(); 
     	
-    	String s=request.getParameter("statu");
     	int statu=Integer.parseInt(s);
     	modelAndView=orderService.getOrdersBystatuService(statu);
     	
@@ -78,11 +79,9 @@ public class OrderController {
      * 管理员登录检验逻辑
      */
     @RequestMapping("/login")
-    public ModelAndView Login(HttpServletRequest request,HttpSession session){
+    public ModelAndView Login(@RequestParam(value = "adminName", required = false) String adminName,@RequestParam(value = "adminPwd", required = false) String adminPwd,HttpSession session){
     	ModelAndView modelAndView=new ModelAndView(); 
     	
-    	String adminName=request.getParameter("adminName");
-    	String adminPwd=request.getParameter("adminPwd");
     	session.setAttribute("adminName", adminName);
     	modelAndView=orderService.handleLoginService(adminName,adminPwd,session);
     	

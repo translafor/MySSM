@@ -2,6 +2,8 @@ package com.fendo.entity;
 
 import java.util.Date;
 
+import javax.validation.constraints.Pattern;
+
 public class Order {
 	
 	private int orderId;
@@ -9,6 +11,7 @@ public class Order {
 	private String prodName;
 	private double orderCount;
 	private Date orderDate;
+	@Pattern(regexp = "[1-2]{1}", message = "reason的类型值为1-2中的一个类型")
 	private int statu;
 	public int getOrderId() {
 		return orderId;

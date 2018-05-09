@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+ <mapper namespace="com.fendo.dao.ItemDao">
+ 	<!-- 查询所有的数据 -->  
+    <select id="getItems" resultType="Item">  
+        select * from items 
+    </select> 
+    
+    <!-- 查询某种商品的数量 -->
+    <select id="getSingleItems" resultType="Item">  
+        select * from items where itemName=#{itemName}
+    </select> 
+    
+    <!-- 修改数据 -->
+    <update id="updateItems" parameterType="item">
+    	update items set itemCount=itemCount-1 where itemName=#{itemName}
+    </update>
+</mapper> 

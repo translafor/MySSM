@@ -60,6 +60,13 @@
 	快速登录小窗口：
 	<br/>
 	<iframe src="index.jsp" width="200" height="200"></iframe><br/>
+	
+	购买链接：&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+	<a href="getAllItems.action" >
+	<p1>购买</p1>
+	</a>
+	<br/>
+	
 	登录链接：&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	<a href="index.jsp" >
 	<p1>管理员登录</p1>

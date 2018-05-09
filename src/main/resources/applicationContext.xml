@@ -35,16 +35,11 @@
         <!-- 03.加载MyBatis映射文件 -->  
         <property name="mapperLocations" value="classpath:com/fendo/entity/*.xml"></property>  
     </bean>  
-      
-      
-    <!-- 配置Dao接口的两种方法: 1.单个MapperFactoryBean  2.包里面的MapperScannerConfigurer-->  
-      
-    <!-- 配置PersonDao -->  
-    <!-- <bean id="personDao" class="org.mybatis.spring.mapper.MapperFactoryBean">  
-        <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>  
-          
-        <property name="mapperInterface" value="com.zking.dao.PersonDao"></property>  
-    </bean> -->  
+     
+     <!-- 事务管理器 -->
+     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+        <property name="dataSource" ref="dataSource" />  
+    </bean>
       
     <!-- 配置整个包中所有的Dao接口 -->  
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
